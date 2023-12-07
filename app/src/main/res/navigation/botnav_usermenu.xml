@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/botnav_usermenu.xml"
+    app:startDestination="@id/homeFragment2">
+
+    <activity
+        android:id="@+id/homeFragment2"
+        android:name="com.example.ppapb_travelakuy.usermenu.HomeFragment"
+        android:label="usermenu_home_fragment"
+        tools:layout="@layout/usermenu_home_fragment" />
+    <activity
+        android:id="@+id/historyFragment2"
+        android:name="com.example.ppapb_travelakuy.usermenu.HistoryFragment"
+        android:label="usermenu_history_fragment"
+        tools:layout="@layout/usermenu_history_fragment" />
+    <activity
+        android:id="@+id/profileFragment2"
+        android:name="com.example.ppapb_travelakuy.usermenu.ProfileFragment"
+        android:label="usermenu_profile_fragment"
+        tools:layout="@layout/usermenu_profile_fragment" />
+</navigation>
