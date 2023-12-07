@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.ppapb_travelakuy.databinding.LoginFragmentBinding
+import com.example.ppapb_travelakuy.databinding.UsersigninLoginFragmentBinding
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = LoginFragmentBinding.inflate(inflater, container, false)
+        val binding = UsersigninLoginFragmentBinding.inflate(inflater, container, false)
         val bundle = arguments
         val username2 = bundle?.getString("username")
         val password2 = bundle?.getString("password")

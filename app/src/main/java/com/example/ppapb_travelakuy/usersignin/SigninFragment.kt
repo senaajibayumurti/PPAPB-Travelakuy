@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import android.widget.Toast.makeText
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.ppapb_travelakuy.databinding.SigninFragmentBinding
+import com.example.ppapb_travelakuy.databinding.UsersigninSigninFragmentBinding
 
 class SigninFragment : Fragment() {
 
@@ -17,7 +17,7 @@ class SigninFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = SigninFragmentBinding.inflate(inflater, container, false)
+        val binding = UsersigninSigninFragmentBinding.inflate(inflater, container, false)
         val button: Button = binding.buttonSignIn
 
         with(binding) {
