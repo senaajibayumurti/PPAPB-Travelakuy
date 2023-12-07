@@ -17,7 +17,7 @@ class ItemTravelAdapter (private val listTravel:List<Travel>):
                                 tvPrice.text = data.price.toString()
 
                                 ivTravelIcon.setOnClickListener {
-                                    TODO("Pindahin ke riwayat???")
+                                    TODO("pindahin ke riawayat???")
                                 }
                             }
                         }
