@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        title = "MyTabLayout"
+        title = "Travelakuy"
 
         var binding = UsersigninActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

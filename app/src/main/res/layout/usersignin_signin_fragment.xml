@@ -45,20 +45,11 @@
             android:id="@+id/editText_email"
             android:fontFamily="@font/poppins_light"
             android:inputType="textEmailAddress"
-            android:hint="E-Mail" />`
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="24dp"
-            style="@style/customEditText"
-
-            android:id="@+id/editText_phone"
-            android:fontFamily="@font/poppins_light"
-            android:inputType="number"
-            android:hint="Phone Number" />
+            android:hint="E-Mail" />
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_marginBottom="24dp"
             app:passwordToggleEnabled="true"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
@@ -75,66 +66,6 @@
                 android:inputType="textPassword"
                 android:hint="Password" />
         </com.google.android.material.textfield.TextInputLayout>
-        <LinearLayout
-            android:id="@+id/link_tnc_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-
-            android:orientation="horizontal">
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:id="@+id/checkbox_tnc"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="By checking the box you agree to our "
-                android:fontFamily="@font/poppins_light"
-                android:textSize="9sp"/>
-            <TextView
-                style="@style/customTextViewHyperlinkText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="@string/hyperlink_terms"
-                android:fontFamily="@font/poppins_light"
-                android:textSize="9sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text=" and "
-                android:fontFamily="@font/poppins_light"
-                android:textSize="9sp"/>
-            <TextView
-                style="@style/customTextViewHyperlinkText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="@string/hyperlink_condition"
-                android:fontFamily="@font/poppins_light"
-                android:textSize="9sp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:gravity="bottom"
-
-        android:id="@+id/linear_signIn_button"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear_signIn_credentials">
-
         <androidx.appcompat.widget.AppCompatButton
             style="@style/customRoundedButton"
             android:layout_width="match_parent"
@@ -142,29 +73,5 @@
 
             android:id="@+id/button_signIn"
             android:text="Register" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-
-            android:id="@+id/link_haveAnAccount_text">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="Already Have an Account? "
-                android:fontFamily="@font/poppins_light"/>
-
-            <TextView
-                style="@style/customTextViewHyperlinkText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="@string/hyperlink_logIn"
-                android:fontFamily="@font/poppins_light"/>
-        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
