@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
 
         android:id="@+id/rv_list_travel"
-        tools:listitem="@layout/usermenu_item_travel"
+        tools:listitem="@layout/usermenu_item_travel_home"
         tools:itemCount="5"/>
 </LinearLayout>
