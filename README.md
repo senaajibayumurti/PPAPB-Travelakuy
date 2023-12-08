@@ -23,7 +23,7 @@
   - Tampilan Home dengan recyclerview menampilkan item travel dari admin.
   - Recyclerview mirip dengan milik admin, namun tidak ada tombol close.
   - Ketika item travel diklik, akan membuka halaman Order Detail yang menampilkan asal dan tujuan sesuai dengan item travel yang dipilih.
-  - Pengguna hanya perlu mengisi tanggal dan kelas kereta (spinner), setelah itu total harga akan muncul dan tombol pesan sekarang dapat ditekan.
+  - Pengguna hanya perlu mengisi tanggal dan kelas kereta (spinner) ditampilkan juga harga awal sesuai yang tertera di item travel, setelah terisi semua total harga akan muncul dan tombol pesan sekarang dapat ditekan.
   - Setelah melakukan pemesanan, pengguna dialihkan ke halaman History.
   - Tombol bottom navigation Profile akan mengarahkan ke halaman Profile.
 
