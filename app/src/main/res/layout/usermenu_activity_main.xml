@@ -5,20 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".usermenu.MainActivity">
+
     <fragment
+        android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/botnav_usermen"
+        app:navGraph="@navigation/botnav_usermenu" />
 
-        android:id="@+id/fragment_usermenu"
-        app:navGraph="@navigation/botnav_usermenu"
-
-        app:layout_constraintBottom_toTopOf="@id/botnav_usermenu"
-        app:layout_constraintTop_toTopOf="parent"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:id="@+id/botnav_usermenu"
+        android:id="@+id/botnav_usermen"
         app:itemIconTint="@color/black"
         app:itemTextColor="?attr/colorPrimary"
         android:background="@color/white"

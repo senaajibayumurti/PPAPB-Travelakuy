@@ -15,41 +15,82 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/ll_create_form"
         app:layout_constraintStart_toStartOf="parent"/>
+
     <LinearLayout
+        android:id="@+id/ll_create_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="24dp"
-        android:padding="16dp"
-
-        android:id="@+id/ll_create_form"
         android:background="@color/grey_1"
+        android:orientation="vertical"
+
+        android:padding="16dp"
+        android:paddingTop="24dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_station_one"
-            android:hint="Stasiun 1"/>
-        <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
+            android:layout_height="wrap_content"
+            android:hint="Stasiun 1" />
+
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_station_two"
-            android:hint="Stasiun 2"/>
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:hint="Stasiun 2" />
+
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
             android:id="@+id/et_price"
-            android:hint="Harga"/>
-        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
+            android:layout_height="wrap_content"
+            android:hint="Harga" />
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_add"
-            android:text="TAMBAH"/>
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:text="TAMBAH" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_room"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:text="TAMBAH" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="logout"
+        app:layout_constraintBottom_toTopOf="@+id/ll_create_form"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/connections"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_room"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_travel_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

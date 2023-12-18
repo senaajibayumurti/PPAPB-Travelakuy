@@ -3,21 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/botnav_usermenu.xml"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/homeFragment">
 
-    <activity
-        android:id="@+id/homeFragment2"
+    <fragment
+        android:id="@+id/homeFragment"
         android:name="com.example.ppapb_travelakuy.usermenu.HomeFragment"
         android:label="usermenu_home_fragment"
-        tools:layout="@layout/usermenu_home_fragment" />
-    <activity
-        android:id="@+id/historyFragment2"
+        tools:layout="@layout/usermenu_home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
         android:name="com.example.ppapb_travelakuy.usermenu.HistoryFragment"
         android:label="usermenu_history_fragment"
         tools:layout="@layout/usermenu_history_fragment" />
-    <activity
-        android:id="@+id/profileFragment2"
+    <fragment
+        android:id="@+id/profileFragment"
         android:name="com.example.ppapb_travelakuy.usermenu.ProfileFragment"
         android:label="usermenu_profile_fragment"
         tools:layout="@layout/usermenu_profile_fragment" />
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.example.ppapb_travelakuy.usermenu.OrderDetailFragment"
+        android:label="usermenu_order_detail_fragment"
+        tools:layout="@layout/usermenu_order_detail_fragment" >
+        <action
+            android:id="@+id/action_orderDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
 </navigation>

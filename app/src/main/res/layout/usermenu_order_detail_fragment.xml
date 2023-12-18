@@ -58,15 +58,17 @@
             android:id="@+id/et_datetime"
             android:fontFamily="@font/poppins_light"
             android:inputType="datetime"
-            android:hint="Tanggal dan Waktu" />
+            android:hint="Tanggal dan Waktu"
+            android:focusable="false"
+            />
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="24dp"
             style="@style/customEditText"
-
             android:id="@+id/et_class"
             android:fontFamily="@font/poppins_light" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

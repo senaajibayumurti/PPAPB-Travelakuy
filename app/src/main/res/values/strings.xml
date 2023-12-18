@@ -17,6 +17,21 @@
     <string name="hyperlink_condition">
         <u>Condition</u>
     </string>
+    <string name="online_status">
+        Berhasil terhubung dengan internet
+    </string>
+    <string name="offline_status">
+        Tidak terhubung dengan internet
+    </string>
+    <string name="signin_persuasive_txt">
+        Nikmati seluruh fitur Traveloka, termasuk bocoran promo &amp; info paling baru tentang pesananmu
+    </string>
+    <string name="snk_txt">
+        Dengan mendaftar, saya menyetujui Syarat &amp; Ketentuan dan Kebijakan Privasi Traveloka.
+    </string>
+    <string name="privacy_txt">
+        Kami akan melindungi datamu untuk mencegah risiko keamanan.
+    </string>
     <string name="title_activity_home_fragment">HomeFragment</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

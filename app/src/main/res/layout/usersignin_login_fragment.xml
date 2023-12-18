@@ -4,64 +4,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingVertical="54dp"
-    android:paddingHorizontal="32dp"
     tools:context=".usersignin.LoginFragment">
 
     <LinearLayout
-        android:id="@+id/linear_logIn_credentials"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="74dp"
         android:orientation="vertical"
+        android:paddingVertical="54dp"
+        android:paddingHorizontal="32dp"
+
+        android:id="@+id/linear_logIn_credentials"
+
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            style="@style/customTextViewTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-
-            android:text="Log In" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/editText_username_logIn"
-            style="@style/customEditText"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-
-            android:layout_marginBottom="24dp"
-            android:fontFamily="@font/poppins_light"
-            android:hint="Username"
-            android:inputType="text" />
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="24dp"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:hintEnabled="false"
-            app:passwordToggleEnabled="true">
-
+            android:layout_height="64dp"
+            android:layout_marginBottom="8dp"
+            app:hintEnabled="false">
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/editText_password_logIn"
+                android:id="@+id/editText_username_logIn"
                 style="@style/customEditText"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="24dp"
+                android:layout_height="64dp"
+
+
 
                 android:fontFamily="@font/poppins_light"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:padding="0dp" />
+                android:hint="Username"
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="24dp"
+            app:passwordToggleEnabled="true"
+            app:hintEnabled="false">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:padding="0dp"
+
+                android:id="@+id/editText_password_logIn"
+                style="@style/customEditText"
+                android:fontFamily="@font/poppins_light"
+                android:hint="Password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+
+            android:id="@+id/ll_privacy">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+
+                android:id="@+id/iv_privacy"
+                android:src="@drawable/ic_padlock"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/tv_privacy_txt"
+                android:text="@string/privacy_txt"/>
+        </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_logIn"
-            style="@style/customRoundedButton"
+            style="@style/customButton2"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
