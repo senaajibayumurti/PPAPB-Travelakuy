@@ -10,6 +10,8 @@ import android.widget.Toast
 import android.widget.Toast.makeText
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.ppapb_travelakuy.databinding.UsersigninSigninFragmentBinding
+import com.example.ppapb_travelakuy.listener.AuthListener
+import com.example.ppapb_travelakuy.listener.FragmentListener
 
 class SigninFragment : Fragment() {
 
@@ -21,7 +23,9 @@ class SigninFragment : Fragment() {
         val button: Button = binding.buttonSignIn
 
         with(binding) {
-            val mainActivity = requireActivity() as MainActivity
+            val auth = requireActivity() as AuthListener
+            val fragment = requireActivity() as FragmentListener
+
             button.setOnClickListener {
                 val username1 = editTextUsername.text.toString()
                 val email1 = editTextEmail.text.toString()
@@ -36,27 +40,9 @@ class SigninFragment : Fragment() {
                         "Please fill out the credentials.",
                         Toast.LENGTH_SHORT
                     ).show()
-                } else if (
-                    !checkboxTnc.isChecked
-                ){
-                    makeText(requireContext(),
-                        "Please accept our Terms and Conditions.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    val bundle = Bundle()
-                    bundle.putString("username", username1)
-                    bundle.putString("password", password1)
-
-                    val adapter = mainActivity.viewPager2.adapter as FragmentStateAdapter
-                    val loginFragment = adapter.createFragment(1) as LoginFragment
-                    loginFragment.arguments = bundle
-                    mainActivity.toLoginPage()
-
-                    makeText(requireContext(),
-                        "You Are Registered!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                }  else {
+                    auth.RegisterAccount(username1, email1, password1)
+                    fragment.toPage(1)
                 }
             }
         }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.ppapb_travelakuy.databinding.UsersigninLoginFragmentBinding
+import com.example.ppapb_travelakuy.listener.AuthListener
 
 class LoginFragment : Fragment() {
     override fun onCreateView(
@@ -14,28 +15,14 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = UsersigninLoginFragmentBinding.inflate(inflater, container, false)
-        val bundle = arguments
-        val username2 = bundle?.getString("username")
-        val password2 = bundle?.getString("password")
-        val un = "Username"
-        val pw = "Password"
+        val auth = requireActivity() as AuthListener
 
         with(binding){
             btnLogIn.setOnClickListener {
-                if (editTextUsernameLogIn.text.toString() != username2){
-                    credentialIncorrectToast(un)
-                } else if (editTextPasswordLogIn.text.toString() != password2){
-                    credentialIncorrectToast(pw)
-                }
+                auth.setAccount(editTextUsernameLogIn.text.toString(), editTextPasswordLogIn.text.toString())
             }
         }
         return binding.root
     }
-    fun credentialIncorrectToast(credential:String){
-        Toast.makeText(
-            requireContext(),
-            "${credential} tidak terdaftar",
-            Toast.LENGTH_SHORT
-        ).show()
-    }
+
 }
