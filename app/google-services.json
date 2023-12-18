@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "89816564033",
+    "project_id": "uasppapb",
+    "storage_bucket": "uasppapb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89816564033:android:edd48a367c568205e4e1c0",
+        "android_client_info": {
+          "package_name": "com.example.ppapb_travelakuy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCszMTAt88yUgQNYS4uwWJkmP5bCWm2kBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
