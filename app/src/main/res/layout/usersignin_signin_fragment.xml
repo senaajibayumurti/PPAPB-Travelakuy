@@ -28,7 +28,7 @@
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/editText_username"
-                style="@style/customEditText"
+                style="@style/customEditText1"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
 
@@ -45,7 +45,7 @@
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/editText_email"
-                style="@style/customEditText"
+                style="@style/customEditText1"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
 
@@ -66,7 +66,7 @@
                 android:layout_height="64dp"
 
                 android:id="@+id/editText_password"
-                style="@style/customEditText"
+                style="@style/customEditText1"
 
                 android:fontFamily="@font/poppins_light"
                 android:hint="Password"

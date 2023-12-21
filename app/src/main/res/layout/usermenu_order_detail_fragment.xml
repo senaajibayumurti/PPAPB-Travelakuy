@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="54dp"
-    android:paddingHorizontal="32dp"
     tools:context=".usermenu.OrderDetailFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingVertical="54dp"
+        android:paddingHorizontal="32dp"
         android:orientation="vertical"
         android:gravity="center"
 
@@ -42,8 +42,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="32dp"
+        android:paddingHorizontal="32dp"
         android:orientation="vertical"
-        android:layout_marginTop="24dp"
 
         android:id="@+id/ll_order_detail"
 
@@ -53,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="24dp"
-            style="@style/customEditText"
+            style="@style/customEditText2"
 
             android:id="@+id/et_datetime"
             android:fontFamily="@font/poppins_light"
@@ -65,24 +66,68 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="24dp"
-            style="@style/customEditText"
+            style="@style/customEditText2"
+
             android:id="@+id/et_class"
             android:fontFamily="@font/poppins_light" />
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="24dp"
+        android:orientation="horizontal"
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
+        android:id="@+id/cl_sum_info"
 
-            android:id="@+id/tv_total_price"
-            android:text="Rp 0"
-            android:textSize="48sp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:id="@+id/ll_price_info"
+
+            app:layout_constraintTop_toTopOf="@id/cl_sum_info"
+            app:layout_constraintBottom_toBottomOf="@id/cl_sum_info"
+            app:layout_constraintStart_toStartOf="@id/cl_sum_info">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Total harga tiket"
+                android:textColor="@color/grey_3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/tv_total_price"
+                android:text="Rp 0"
+                android:textColor="@color/orange_1"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Termasuk Pajak"
+                android:textColor="@color/grey_3"/>
+        </LinearLayout>
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/customRoundedButton"
+            android:layout_weight="1"
+            android:paddingHorizontal="16dp"
+            style="@style/customButton2"
 
             android:id="@+id/btn_order"
-            android:text="Pesan Sekarang"/>
-    </LinearLayout>
+            android:text="Pesan Sekarang"
+
+            app:layout_constraintTop_toTopOf="@id/cl_sum_info"
+            app:layout_constraintBottom_toBottomOf="@id/cl_sum_info"
+            app:layout_constraintEnd_toEndOf="@id/cl_sum_info"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

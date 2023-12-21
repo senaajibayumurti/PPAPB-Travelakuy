@@ -46,8 +46,8 @@
     </style>
 
     <!--Custom Edit Text-->
-    <style name="customEditText" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@drawable/custom_edittext</item>
+    <style name="customEditText1" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/custom_edittext_1</item>
         <item name="android:textColor">@color/grey_2</item>
         <item name="android:paddingHorizontal">16dp</item>
     </style>
