@@ -2,17 +2,16 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PPAPBTravelakuy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_2</item>
-        <item name="colorPrimaryVariant">@color/blue_3</item>
-        <item name="colorOnPrimary">@color/blue_4</item>
+        <item name="colorPrimary">@color/blue_1</item>
+        <item name="colorPrimaryVariant">@color/blue_2</item>
+        <item name="colorOnPrimary">@color/blue_3</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_2</item>
         <item name="colorSecondaryVariant">@color/blue_3</item>
         <item name="colorOnSecondary">@color/blue_4</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/blue_2</item>
-        <item name="android:textColorPrimary">@color/white</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/blue_1</item>
+        <item name="android:textColorPrimary">@color/grey_3</item>
     </style>
     <style name="Base.Theme.PPAPBTravelakuy.WithActionBar" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
@@ -25,30 +24,33 @@
         <item name="colorOnSecondary">@color/blue_4</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/blue_2</item>
-        <item name="android:textColorPrimary">@color/white</item>
-
-        <item name="android:fontFamily">@font/poppins_bold</item>
-        <!-- Customize your theme here. -->
-        <item name="actionBarSize">48dp</item>
-    </style>
-    <!--Custom Font-->
-    <style name="customFontBold" parent="Theme.MaterialComponents.DayNight">
-        <item name="android:fontFamily">@font/poppins_bold</item>
-    </style>
-    <style name="customFontLight" parent="Theme.MaterialComponents.DayNight">
-        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:textColorPrimary">@color/grey_3</item>
     </style>
 
-    <!--Custom Rounded Button-->
+    <!--Custom Button 1-->
     <style name="customButton1" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/btn_1</item>
         <item name="android:textColor">@color/white</item>
     </style>
+    <!--Custom Button 2-->
+    <style name="customButton2" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_2</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
-    <!--Custom Edit Text-->
+
+    <!--Custom Edit Text 1-->
     <style name="customEditText1" parent="Widget.AppCompat.EditText">
         <item name="android:background">@drawable/custom_edittext_1</item>
-        <item name="android:textColor">@color/grey_2</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/grey_3</item>
+        <item name="android:paddingHorizontal">16dp</item>
+    </style>
+    <!--Custom Edit Text 2-->
+    <style name="customEditText2" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/custom_edittext_2</item>
+        <item name="android:textColor">@color/grey_1</item>
+        <item name="hintTextColor">@color/grey_3</item>
         <item name="android:paddingHorizontal">16dp</item>
     </style>
 
@@ -75,5 +77,12 @@
     <!--    For Hyperlink Text-->
     <style name="customTextViewHyperlinkText" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/blue_2</item>
+    </style>
+
+    <style name="botnav_text">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/white</item>
     </style>
 </resources>

@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_1"
+    android:background="?colorPrimaryVariant"
     tools:context=".usermenu.OrderDetailFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        android:id="@+id/toolbar"
+        app:titleTextColor="@color/white"
+        tools:ignore="MissingConstraints"
+        app:title="Detail Pesanan"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -59,14 +67,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_station_one"
+
+                        android:id="@+id/tv_origin"
                         android:text="Stasiun 1"
                         android:textSize="24sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_station_two"
+
+                        android:id="@+id/tv_destination"
                         android:text="Stasiun 2"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -139,7 +149,6 @@
             style="@style/customEditText2"
 
             android:id="@+id/et_datetime"
-            android:fontFamily="@font/poppins_light"
             android:inputType="datetime"
             android:hint="Tanggal dan Waktu"
             android:focusable="false" />
@@ -155,8 +164,7 @@
             android:layout_marginBottom="24dp"
             style="@style/customEditText2"
 
-            android:id="@+id/et_class"
-            android:fontFamily="@font/poppins_light" />
+            android:id="@+id/et_class" />
     </LinearLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

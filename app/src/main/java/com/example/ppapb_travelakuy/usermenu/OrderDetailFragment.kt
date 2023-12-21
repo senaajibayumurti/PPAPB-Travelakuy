@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
+import android.widget.Toolbar
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -51,10 +52,22 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
         val crud = MainActivity.get() as HistoryCrudListener
 
         with(binding) {
+            toolbar.setNavigationIcon(R.drawable.ic_back)
+            toolbar.setNavigationOnClickListener {
+                findNavController().navigateUp()
+            }
+            (binding.toolbar as? Toolbar)?.apply {
+                setNavigationIcon(R.drawable.ic_back)
+                setNavigationOnClickListener {
+                    findNavController().navigateUp()
+                }
+            }
+
+
             val inf = arguments
 
-            tvDesstination.text = inf?.getString("stationOne")
-            tvOrigin.text = inf?.getString("stationTwo")
+            tvOrigin.text = inf?.getString("stationOne")
+            tvDestination.text = inf?.getString("stationTwo")
 
             val spinnerItems = arrayOf("Pilih Kelas", "Ekonomi", "Bisnis", "Eksekutif")
             val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerItems)
@@ -131,7 +144,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
     }
 
     private fun updateSelectedDate(date: Date) {
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("dd-mmmm-yyyy", Locale.getDefault())
         val formattedDate = dateFormat.format(date)
         strD = formattedDate
         showTimePicker()
@@ -179,7 +192,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
         val pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, flag)
         val builder = NotificationCompat.Builder(requireContext(), "1")
             .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentTitle("Ticket Added")
+            .setContentTitle("Tiket Ditambahkan")
             .setContentText("Anda telah menambahkan tiket, silahkan cek di halaman tiket")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)

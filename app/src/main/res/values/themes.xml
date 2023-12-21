@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PPAPBTravelakuy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_2</item>
-        <item name="colorPrimaryVariant">@color/blue_3</item>
-        <item name="colorOnPrimary">@color/blue_4</item>
+        <item name="colorPrimary">@color/blue_1</item>
+        <item name="colorPrimaryVariant">@color/blue_2</item>
+        <item name="colorOnPrimary">@color/blue_3</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_2</item>
         <item name="colorSecondaryVariant">@color/blue_3</item>
@@ -12,9 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/blue_2</item>
         <item name="android:textColorPrimary">@color/grey_3</item>
-        <!-- Customize your theme here. -->
     </style>
-    <style name="Theme.Base.Theme.PPAPBTravelakuy.WithActionBar" parent="Theme.MaterialComponents.DayNight">
+    <style name="Base.Theme.PPAPBTravelakuy.WithActionBar" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blue_2</item>
         <item name="colorPrimaryVariant">@color/blue_3</item>
@@ -26,10 +25,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/blue_2</item>
         <item name="android:textColorPrimary">@color/grey_3</item>
-
-        <item name="android:fontFamily">@font/poppins_bold</item>
-        <!-- Customize your theme here. -->
-        <item name="actionBarSize">48dp</item>
     </style>
 
     <!--Custom Button 1-->
