@@ -4,52 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_1"
     tools:context=".usermenu.OrderDetailFragment">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="72dp"
+
+        android:id="@+id/cv_ticket_info"
+        app:cardCornerRadius="8dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+
+            android:id="@+id/ll_destination_and_origin"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="0dp"
+
+                    android:id="@+id/iv_route"
+
+                    app:layout_constraintTop_toTopOf="@id/ll_station"
+                    app:layout_constraintBottom_toBottomOf="@id/ll_station"
+                    app:layout_constraintStart_toEndOf="@id/ll_station"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+
+                    android:id="@+id/ll_station"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_station_one"
+                        android:text="Stasiun 1"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_station_two"
+                        android:text="Stasiun 2"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_weight="2"
+
+                android:id="@+id/ll_important_info"
+                android:background="@color/grey_1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+
+                    android:text="Tidak Bisa Refund"
+                    android:textColor="@color/success"
+                    android:drawableStart="@drawable/ic_info"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+
+                    android:text="Tidak Bisa Reschedule"
+                    android:textColor="@color/success"
+                    android:drawableStart="@drawable/ic_info"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="54dp"
-        android:paddingHorizontal="32dp"
-        android:orientation="vertical"
-        android:gravity="center"
-
-        android:id="@+id/ll_destination_and_origin"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/tv_origin"
-            android:text="Stasiun 1"
-            android:textSize="28sp"/>
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginVertical="16dp"
-
-            android:id="@+id/iv_travel_icon"
-            android:src="@drawable/ic_vehicle"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/tv_desstination"
-            android:text="Stasiun 2"
-            android:textSize="28sp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:paddingTop="32dp"
         android:paddingHorizontal="32dp"
+        android:layout_marginTop="24dp"
         android:orientation="vertical"
 
         android:id="@+id/ll_order_detail"
+        android:background="@color/white"
 
-        app:layout_constraintTop_toBottomOf="@id/ll_destination_and_origin"
+        app:layout_constraintTop_toBottomOf="@id/cv_ticket_info"
+        app:layout_constraintBottom_toTopOf="@id/cl_sum_info"
         app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Pilih Jadwal"
+            android:textColor="@color/black"/>
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -60,9 +142,14 @@
             android:fontFamily="@font/poppins_light"
             android:inputType="datetime"
             android:hint="Tanggal dan Waktu"
-            android:focusable="false"
-            />
-        <Spinner
+            android:focusable="false" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Pilih Kelas"
+            android:textColor="@color/black"/>
+        <androidx.appcompat.widget.AppCompatSpinner
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="24dp"
@@ -80,6 +167,8 @@
         android:orientation="horizontal"
 
         android:id="@+id/cl_sum_info"
+        android:background="@color/white"
+        android:elevation="16dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
