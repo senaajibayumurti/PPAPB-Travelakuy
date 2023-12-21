@@ -2,6 +2,7 @@ package com.example.ppapb_travelakuy.usermenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.ppapb_travelakuy.R
@@ -17,6 +18,15 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment)
         binding.botnavUsermen.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.orderDetailFragment) {
+                binding.botnavUsermen.visibility = View.GONE
+            } else {
+                binding.botnavUsermen.visibility = View.VISIBLE
+            }
+        }
+
     }
 
 }

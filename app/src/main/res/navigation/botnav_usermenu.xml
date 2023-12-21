@@ -34,8 +34,8 @@
         android:label="usermenu_order_detail_fragment"
         tools:layout="@layout/usermenu_order_detail_fragment" >
         <action
-            android:id="@+id/action_orderDetailFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_orderDetailFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
 
 </navigation>

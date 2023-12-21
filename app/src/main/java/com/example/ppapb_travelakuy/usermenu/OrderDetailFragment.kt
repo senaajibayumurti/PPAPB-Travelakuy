@@ -1,6 +1,5 @@
 package com.example.ppapb_travelakuy.usermenu
 
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,15 +15,12 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
-import android.widget.TimePicker
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.ppapb_travelakuy.R
 import com.example.ppapb_travelakuy.databinding.UsermenuOrderDetailFragmentBinding
 import com.example.ppapb_travelakuy.db.model.TravelForHistory
-import com.example.ppapb_travelakuy.listener.FragmentListener
 import com.example.ppapb_travelakuy.listener.HistoryCrudListener
 import com.example.ppapb_travelakuy.notification.NotificationReceiver
 import com.example.ppapb_travelakuy.usersignin.MainActivity
@@ -107,7 +103,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
                     price = random
                 ))
                 notifyTicket()
-                findNavController().navigate(R.id.action_orderDetailFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_orderDetailFragment_to_historyFragment)
             }
 
         }
