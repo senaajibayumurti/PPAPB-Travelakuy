@@ -29,13 +29,20 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
-
+import java.text.NumberFormat
+import java.util.*
 
 class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     private lateinit var binding: UsermenuOrderDetailFragmentBinding
     private var strD: String = ""
     private var strT: String = ""
     private var random: Int = 0
+
+    private fun formatToRupiah(number: Int): String {
+        val localeID = Locale("in", "ID")
+        val numberFormat = NumberFormat.getCurrencyInstance(localeID)
+        return numberFormat.format(number.toLong()).toString()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,7 +70,6 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
                 }
             }
 
-
             val inf = arguments
 
             tvOrigin.text = inf?.getString("stationOne")
@@ -81,18 +87,18 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
                     when (item) {
                         "Ekonomi" -> {
                             random = (50000..100000).random() + (inf?.getInt("price") ?: 0)
-                            tvTotalPrice.text = "Rp. ${random.toString()}"
+                            tvTotalPrice.text = formatToRupiah(random)
                         }
                         "Bisnis" -> {
                             random = (100000..200000).random()  + (inf?.getInt("price") ?: 0)
-                            tvTotalPrice.text = "Rp. ${random.toString()}"
+                            tvTotalPrice.text = formatToRupiah(random)
                         }
                         "Eksekutif" -> {
                             random = (200000..300000).random()  + (inf?.getInt("price") ?: 0)
-                            tvTotalPrice.text = "Rp. ${random.toString()}"
+                            tvTotalPrice.text = formatToRupiah(random)
                         } else -> {
                         random = (inf?.getInt("price") ?: 0)
-                        tvTotalPrice.text = "Rp. ${inf?.getInt("price").toString()}"
+                        tvTotalPrice.text = formatToRupiah(random)
                     }
                     }
                 }
@@ -118,10 +124,8 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
                 notifyTicket()
                 findNavController().navigate(R.id.action_orderDetailFragment_to_historyFragment)
             }
-
         }
     }
-
 
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
@@ -130,7 +134,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(requireContext(), this, year, month, day)
-        datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000 // Set a minimum date if needed
+        datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
         datePickerDialog.show()
     }
 
@@ -144,7 +148,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
     }
 
     private fun updateSelectedDate(date: Date) {
-        val dateFormat = SimpleDateFormat("dd-mmmm-yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
         val formattedDate = dateFormat.format(date)
         strD = formattedDate
         showTimePicker()
@@ -160,7 +164,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
             this,
             hour,
             minute,
-            true // Set to true for 24-hour format, false for 12-hour format
+            true
         )
         timePickerDialog.show()
     }
@@ -180,7 +184,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
     }
 
     private fun notifyTicket() {
-        val NOTIFICATION_ID = 1 // Unique notification ID
+        val NOTIFICATION_ID = 1
 
         val flag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
@@ -192,7 +196,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
         val pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, flag)
         val builder = NotificationCompat.Builder(requireContext(), "1")
             .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentTitle("Tiket Ditambahkan")
+            .setContentTitle("Ticket Added")
             .setContentText("Anda telah menambahkan tiket, silahkan cek di halaman tiket")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)
@@ -210,5 +214,4 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
             requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(NOTIFICATION_ID, builder.build())
     }
-
 }
