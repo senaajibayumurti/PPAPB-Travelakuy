@@ -4,6 +4,12 @@
     USER FLOW
   </a>
 </p>
+<p align="center">
+  <a
+https://drive.google.com/drive/folders/18DZ7UljX3RBnjWKTz-4nDiQ_EeXczuRB>
+    VIDEO
+  </a>
+</p>
 
 ## Admin:
 - **Deskripsi:**
@@ -26,6 +32,3 @@
   - Pengguna hanya perlu mengisi tanggal dan kelas kereta (spinner) ditampilkan juga harga awal sesuai yang tertera di item travel, setelah terisi semua total harga akan muncul dan tombol pesan sekarang dapat ditekan.
   - Setelah melakukan pemesanan, pengguna dialihkan ke halaman History.
   - Tombol bottom navigation Profile akan mengarahkan ke halaman Profile.
-
-## Tambahan:
-- TBD.
