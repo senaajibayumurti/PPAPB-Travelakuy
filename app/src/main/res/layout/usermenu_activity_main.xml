@@ -7,21 +7,24 @@
     tools:context=".usermenu.MainActivity">
 
     <fragment
-        android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+
+        android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/botnav_usermen"
         app:navGraph="@navigation/botnav_usermenu" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+
         android:id="@+id/botnav_usermen"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="?attr/colorPrimary"
+        app:itemIconTint="@color/sel_botnav_icon"
+        app:itemTextColor="@color/sel_botnav_icon"
         android:background="@color/white"
         app:itemTextAppearanceActive="@style/botnav_text"
         app:itemTextAppearanceInactive="@style/botnav_text"
@@ -31,5 +34,4 @@
         app:menu="@menu/bottom_navigation_menu"
 
         app:layout_constraintBottom_toBottomOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
