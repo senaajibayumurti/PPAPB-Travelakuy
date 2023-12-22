@@ -93,7 +93,6 @@ StationCrudListener, HistoryCrudListener {
             } else {
                 startActivity(Intent(this, MainActivity::class.java))
             }
-
         }
 
     }
@@ -161,6 +160,7 @@ StationCrudListener, HistoryCrudListener {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
+            finish()
         } else {
             Toast.makeText(this, "Wrong Username or Password", Toast.LENGTH_SHORT).show()
         }

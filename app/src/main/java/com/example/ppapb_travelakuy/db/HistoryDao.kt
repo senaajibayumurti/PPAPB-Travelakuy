@@ -9,12 +9,10 @@ import com.example.ppapb_travelakuy.db.model.TravelForHistory
 
 @Dao
 interface HistoryDao {
-
-
     @Delete
     fun deleteHistory(travelForHistory: TravelForHistory)
     @Insert(onConflict = androidx.room.OnConflictStrategy.IGNORE)
     fun insertHistory(travelForHistory: TravelForHistory)
-    @Query("SELECT * FROM history where userID = :id")
+    @Query("SELECT * FROM history WHERE userID = :id ORDER BY schedule_date")
     fun getAllHistory(id: String): LiveData<List<TravelForHistory>>
 }

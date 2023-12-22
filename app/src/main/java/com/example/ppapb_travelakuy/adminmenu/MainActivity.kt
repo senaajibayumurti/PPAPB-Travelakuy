@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.Color
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -53,7 +54,8 @@ class MainActivity : AppCompatActivity() {
                 crud.getTravel()
                 if (isConnected) {
                     binding.tvConnections.text = "Terhubung ke internet"
-                    binding.tvConnections.setBackgroundColor(R.color.success)
+                    binding.tvConnections.setBackgroundResource(R.color.success)
+
                     with(binding) {
 
                         rvTravelItem.visibility = View.VISIBLE
@@ -104,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 } else {
                     binding.tvConnections.text = "Tidak dapat terhubung ke internet"
-                    binding.tvConnections.setBackgroundColor(R.color.danger)
+                    binding.tvConnections.setBackgroundResource(R.color.danger)
                     with(binding) {
                         hasDisconnected = true
                         rvTravelItem.visibility = View.GONE
@@ -143,6 +145,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = AdminmenuActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.apply {
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            statusBarColor = Color.TRANSPARENT
+        }
 
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         registerReceiver(networkReceiver, filter)

@@ -51,10 +51,36 @@
                     app:layout_constraintBottom_toBottomOf="@id/ll_station"
                     app:layout_constraintStart_toEndOf="@id/ll_station"
                     app:layout_constraintEnd_toEndOf="parent"/>
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+
+                    android:id="@+id/ll_time"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Asal"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Tujuan"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:orientation="vertical"
                     android:gravity="center_vertical"
 
@@ -62,8 +88,7 @@
 
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
+                    app:layout_constraintStart_toEndOf="@id/ll_time">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

@@ -11,10 +11,6 @@
         android:label="usermenu_home_fragment"
         tools:layout="@layout/usermenu_home_fragment" >
         <action
-            android:id="@+id/action_homeFragment_to_historyFragment"
-            app:destination="@id/historyFragment"
-            />
-        <action
             android:id="@+id/action_homeFragment_to_orderDetailFragment"
             app:destination="@id/orderDetailFragment" />
     </fragment>
@@ -35,7 +31,7 @@
         tools:layout="@layout/usermenu_order_detail_fragment" >
         <action
             android:id="@+id/action_orderDetailFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            app:destination="@id/homeFragment" />
     </fragment>
 
 </navigation>

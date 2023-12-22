@@ -17,7 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".adminmenu.MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".usermenu.ProfileFragment"
             android:exported="false" />
