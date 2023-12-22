@@ -1,5 +1,6 @@
 package com.example.ppapb_travelakuy.adminmenu
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.ppapb_travelakuy.R
 import com.example.ppapb_travelakuy.databinding.AdminmenuActivityMainBinding
@@ -41,13 +44,16 @@ class MainActivity : AppCompatActivity() {
     private val executorService : ExecutorService = Executors.newSingleThreadExecutor()
 
     private val networkStatusReceiver = object : BroadcastReceiver() {
+        @SuppressLint("ResourceAsColor")
         override fun onReceive(context: Context?, intent: Intent?) {
             if (intent != null) {
                 val isConnected = intent.getBooleanExtra("isConnected", false)
                 val crud = MainActivity.get() as StationCrudListener
+
                 crud.getTravel()
                 if (isConnected) {
-                    binding.connections.text = "Connected"
+                    binding.tvConnections.text = "Terhubung ke internet"
+                    binding.tvConnections.setBackgroundColor(R.color.success)
                     with(binding) {
 
                         rvTravelItem.visibility = View.VISIBLE
@@ -81,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                             rvTravelItem.apply {
                                 adapter = ItemTravelForHomeAdapter(it, isAdmin = true, onClick = {
                                     crud.deleteTravel(it.id)
-                                    Toast.makeText(this@MainActivity, "Delete Success", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(this@MainActivity, "Berhasil dihapus", Toast.LENGTH_SHORT).show()
                                 })
                                 layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this@MainActivity)
                             }
@@ -97,7 +103,8 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    binding.connections.text = "Not Connected; Change current database to Room"
+                    binding.tvConnections.text = "Tidak dapat terhubung ke internet"
+                    binding.tvConnections.setBackgroundColor(R.color.danger)
                     with(binding) {
                         hasDisconnected = true
                         rvTravelItem.visibility = View.GONE
@@ -109,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                                 rvRoom.apply {
                                     adapter = ItemTravelForHomeRoomAdapter(it, onClick = {
                                         dao.deleteTravel(it)
-                                        Toast.makeText(this@MainActivity, "Delete Success", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(this@MainActivity, "Berhasil dihapus", Toast.LENGTH_SHORT).show()
                                     })
                                     layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this@MainActivity)
                                 }

@@ -196,7 +196,7 @@ class OrderDetailFragment : Fragment(), DatePickerDialog.OnDateSetListener, Time
         val pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, flag)
         val builder = NotificationCompat.Builder(requireContext(), "1")
             .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentTitle("Ticket Added")
+            .setContentTitle("Tiket telah ditambahkan")
             .setContentText("Anda telah menambahkan tiket, silahkan cek di halaman tiket")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)

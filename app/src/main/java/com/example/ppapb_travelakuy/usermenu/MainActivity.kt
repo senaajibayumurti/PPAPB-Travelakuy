@@ -7,7 +7,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.ppapb_travelakuy.R
 import com.example.ppapb_travelakuy.databinding.UsermenuActivityMainBinding
-import com.example.ppapb_travelakuy.listener.MenuListener
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: UsermenuActivityMainBinding
@@ -26,7 +25,5 @@ class MainActivity : AppCompatActivity() {
                 binding.botnavUsermen.visibility = View.VISIBLE
             }
         }
-
     }
-
 }

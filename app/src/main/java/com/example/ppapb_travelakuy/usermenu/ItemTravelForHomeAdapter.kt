@@ -8,6 +8,8 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ppapb_travelakuy.databinding.UsermenuItemTravelHomeBinding
 import com.example.ppapb_travelakuy.db.model.TravelForHome
+import java.text.NumberFormat
+import java.util.Locale
 
 class ItemTravelForHomeAdapter (private val listTravelForHome:List<TravelForHome>, private val isAdmin: Boolean = false, private val onClick : (TravelForHome) -> Unit = {},
                                 private val addHistory: (TravelForHome) -> Unit = {}):
@@ -18,7 +20,7 @@ class ItemTravelForHomeAdapter (private val listTravelForHome:List<TravelForHome
                         with(binding){
                             tvStationOne.text = data.station_one
                             tvStationTwo.text = data.station_two
-                            tvPrice.text = data.price.toString()
+                            tvPrice.text = formatToRupiah(data.price)
                             if(!isAdmin) {
                                 delete.visibility = View.GONE
                                 root.setOnClickListener {
@@ -34,6 +36,11 @@ class ItemTravelForHomeAdapter (private val listTravelForHome:List<TravelForHome
                     }
                 }
 
+    private fun formatToRupiah(number: Int): String {
+        val localeID = Locale("in", "ID")
+        val numberFormat = NumberFormat.getCurrencyInstance(localeID)
+        return numberFormat.format(number.toLong()).toString()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemTravelViewHolder {
         val binding = UsermenuItemTravelHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemTravelViewHolder(binding)
